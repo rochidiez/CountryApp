@@ -1,46 +1,39 @@
-.item-body {
-    padding: 0px;
-}
-
-.item-image {
-    min-height: 300px;
-    position: relative;
-}
-
-.profile {
-    right: 10px;
-    z-index: 1;
-    position: absolute;
-    bottom: 50px;
-}
-
-.person {
-    float: left;
-}
-
-.person p {
-    margin: 26px 10px 0 0;
-    text-align: right;
-}
-
 .ranking {
     display: flex;
     flex-direction: column;
     flex-flow: row wrap;
-    justify-content: flex-end;
     margin-right: 10px;
+    margin-right: 80px;
+    justify-content: flex-end;
 }
 
-.ranking div {margin: 0 1px;}
-
-.profile-picture {
-    width: 70px;
-    height: 70px;
-    border-radius: 40px;
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-    background: url(http://www.molliemakes.com/wp-content/uploads/sites/49/2014/09/One-Sheepish-Girl-Profile.jpg) no-repeat center;
-    background-size: 100px;
-    
-    float: left;
+.images-position {
+    position: relative;
 }
+
+.item-avatar-right img:first-child {
+    max-width: 70px;
+    max-height: 70px;
+    top: auto;
+}
+
+.item-avatar-right {
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    bottom: -24%;
+}
+
+.item-name-right {
+    text-align: right;
+    padding: 6px 16px;
+}
+
+.item-name-right h2 {
+    margin: 0 80px 0 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.item.item-text-wrap {border: 0px;}
+p.category {margin-top: 16px; text-align: right; text-transform: uppercase; font-size: 12px} 
