@@ -1,0 +1,57 @@
+
+<ion-view view-title="Hacer Reserva">
+ <link href="css/book.css" rel="stylesheet">   
+    <ion-content ng-controller="PopupCtrl">
+        <div class="card booking">
+            <h2>Qué quieres reservar?</h2>
+            <div class="list">
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Lugar
+                    </div>
+                    <select>
+                        <option>Cancha de Tenis</option>
+                        <option selected>Cancha de Futbol</option>
+                        <option>Zoom</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Horario
+                    </div>
+                    <select>
+                        <option selected>8hs</option>
+                        <option>9am</option>
+                        <option>10hs</option>
+                        <option>11hs</option>
+                        <option>12hs</option>
+                        <option>13hs</option>
+                        <option>14hs</option>
+                        <option>15hs</option>
+                        <option>16hs</option>
+                    </select>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Fecha</span>
+                    <input class="date" type="date">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Comentario</span>
+                    <input type="text" placeholder="Necesitas hacer alguna aclaración?">
+                </label>
+            </div>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-calm" ng-click="showConfirm()">
+                Solicitar Reserva
+            </button>
+        </div>
+
+
+
+
+
+
+ 
+    </ion-content>
+</ion-view>

@@ -1,9 +1,27 @@
-<ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
-  </ion-content>
+
+<ion-view view-title="Mi Perfil">
+<link href="css/account.css" rel="stylesheet">
+    <ion-nav-buttons side="right">
+        <button class="button">Guardar</button>
+    </ion-nav-buttons>
+    <ion-content ng-controller="PopupCtrl">
+        <div class="card list">
+            <div>
+                <div class="item-avatar">
+                    <img src="img/luc.png">
+                </div>
+                <div class="item-form">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Agus Gonzalez">
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="24 años">
+                    </label>
+                </div>
+            </div>
+            <button class="button button-custom" ng-click="showPopup()">
+                Cambiar
+            </button>
+        </div>
+    </ion-content>
 </ion-view>

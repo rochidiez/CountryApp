@@ -1,0 +1,14 @@
+.card.list>div {display: flex;
+	wrap: nowrap;}
+.item-avatar > img:first-child{max-height: 60px;
+	max-width: 60px;}
+
+.item-form {margin-left: 20px;}
+.button-custom {font-size: 10px;
+	min-height: 22px;
+	text-transform: uppercase;
+	border: 1px solid #444;
+	background-color: #fff;
+	line-height: 12px;
+	padding: 0 1%;
+	margin: 0 4% 4% 4%;}
