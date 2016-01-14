@@ -1,16 +1,26 @@
 <ion-view view-title="Chats">
-  <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+    <ion-content>
+        <ion-list>
+            <div class="list">
+                <a class="item item-avatar item-icon-right" href="#/chat-detail">
+                    <img src="img/agus.png">
+                    <h2>Luli Ramirez</h2>
+                    <p>Hola! tengo una hija de 5 años. Es super tranquila pero no tengo con quien dejarla el 23 de febrero. Estás libre ese día?</p>
+                    <i class="icon icon ion-chevron-right icon-accessory"></i>
+                </a>
+                <a class="item item-avatar item-icon-right" href="#">
+                    <img src="img/max.png">
+                    <h2>Rolando Iván</h2>
+                    <p>Buenas... Soy padre soltero y estaba buscando alguien que me de una mano cuidando a mi hijo.</p>
+                    <i class="icon icon ion-chevron-right icon-accessory"></i>
+                </a>
+                <a class="item item-avatar item-icon-right" href="#">
+                    <img src="img/flor.png">
+                    <h2>Flor Maritza</h2>
+                    <p>Hey, cómo estás? estabas buscando alguien que te ayude con el transporte no?</p>
+                    <i class="icon icon ion-chevron-right icon-accessory"></i>
+                </a>
+            </div>
+        </ion-list>
+    </ion-content>
 </ion-view>

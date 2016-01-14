@@ -1,2 +1,117 @@
-/* Empty. Add your own CSS if you like */
-p.center {text-align: center;}
+/* General */
+
+p.center {
+    text-align: center;
+}
+
+
+/* Account */
+
+.account .card.list>div {
+    display: flex;
+    wrap: nowrap;
+}
+
+.account .item-avatar > img:first-child {
+    max-height: 60px;
+    max-width: 60px;
+}
+
+.account .item-form {
+    margin-left: 20px;
+    margin-top: 2%;
+    width: 70%;
+}
+
+.account .button-custom {
+    font-size: 10px;
+    min-height: 22px;
+    text-transform: uppercase;
+    border: 1px solid #444;
+    background-color: #fff;
+    line-height: 12px;
+    padding: 0 1%;
+    margin: -4% 4% 4% 4%;
+}
+
+.account .card .item:last-child {border-bottom: 1px solid #ddd;}
+
+
+/* Booking */
+
+.booking h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-left: 4%;
+    padding-top: 4%;
+    font-weight: 300;
+}
+
+.booking input[type="date"] {
+    text-align: right;
+}
+
+
+/* Dash */
+
+.dash .ranking {
+    display: flex;
+    flex-direction: column;
+    flex-flow: row wrap;
+    margin-right: 10px;
+    margin-right: 80px;
+    justify-content: flex-end;
+}
+
+.dash .images-position {
+    position: relative;
+}
+
+.dash .item-avatar-right img:first-child {
+    max-width: 70px;
+    max-height: 70px;
+    top: auto;
+}
+
+.dash .item-avatar-right {
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    bottom: -24%;
+}
+
+.dash .item-name-right {
+    text-align: right;
+    padding: 6px 16px;
+}
+
+.dash .item-name-right h2 {
+    margin: 0 80px 0 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.dash .item.item-text-wrap {
+    border: 0px;
+}
+
+.dash p.category {
+    margin-top: 16px;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 12px
+}
+
+
+/*  Notification */
+
+.notifications .item p {
+    white-space: normal !important;
+}
+
+
+/* Select User */
+
+.select-user .item {
+    line-height: 40px;
+}

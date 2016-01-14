@@ -64,23 +64,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
     })
 
+
     .state('tab.chats', {
-            url: '/chats',
-            views: {
-                'tab-chats': {
-                    templateUrl: 'templates/tab-chats.html',
-                    controller: 'ChatsCtrl'
-                }
-            }
-        })
-        .state('tab.chat-detail', {
-            url: '/chats/:chatId',
-            views: {
-                'tab-chats': {
-                    templateUrl: 'templates/chat-detail.html',
-                    controller: 'ChatDetailCtrl'
-                }
-            }
+      url: "/chats",
+      views: {
+        'tab-account': {
+          templateUrl: "templates/tab-chats.html"
+        }
+      }
+    })
+    .state('chat-detail', {
+            url: '/chat-detail',
+            templateUrl: 'templates/chat-detail.html'
         })
 
     .state('tab.book', {
@@ -122,4 +117,3 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
 //////////////////////
-
