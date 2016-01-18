@@ -1,10 +1,8 @@
-
 <ion-view view-title="Comtry App">
     <ion-nav-buttons side="right">
-        <button class="button button-icon icon ion-ios-settings" ng-click="filter()"></button>
-        <button class="button button-icon icon ion-ios-search" ng-click="search()"></button>
+        <button class="button button-icon icon ion-ios-settings" ng-click="showPopup()"></button>
+        <button class="button button-icon icon ion-ios-search" ng-click="showPopup()"></button>
     </ion-nav-buttons>
-
     <!-- 
     
     <div ng-repeat="publi in publicaciones">
@@ -13,21 +11,18 @@
     </div>
 
      -->
-
-
     <ion-content class="padding dash">
-        <div class="list card">
+        <div class="list card" ng-repeat="post in postings">
             <div class="images-position">
-            <div class="item-avatar-right">
-                  <img src="img/mom2.png">
+                <div class="item-avatar-right">
+                    <img src="img/mica.jpg">
+                </div>
+                <div class="item item-image">
+                    <img src="img/babysitter.jpg">
+                </div>
             </div>
-            <div class="item item-image">
-                <img src="img/babysitter.jpg">
-            </div>
-        </div>
             <div class="item-name-right">
-                
-                <h2>Flor Ramirez</h2>
+                <h2>Mica Gonzalez</h2>
                 <div class="ranking">
                     <div class="icon ion-ios-star"></div>
                     <div class="icon ion-ios-star"></div>
@@ -36,113 +31,12 @@
                     <div class="icon ion-ios-star-outline"></div>
                 </div>
             </div>
-            <a class="item item-text-wrap">
-                Soy maestra jardinera. Me encantan los bebes y tengo mucha paciencia.
-                <p class="category">Babysitter</p>
+            <a class="item item-text-wrap" href="#/tab/dash/{{post.id}}">
+                <h1>{{post.title}}</h1>
+                {{post.description}}
+                <p class="category">{{post.category}}</p>
             </a>
         </div>
-
-
-        <!-- repetir -->
-        <div class="list card">
-            <div class="images-position">
-            <div class="item-avatar-right">
-                  <img src="img/mom2.png">
-            </div>
-            <div class="item item-image">
-                <img src="img/babysitter.jpg">
-            </div>
-        </div>
-            <div class="item-name-right">
-                
-                <h2>Flor Ramirez</h2>
-                <div class="ranking">
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star-half"></div>
-                    <div class="icon ion-ios-star-outline"></div>
-                </div>
-            </div>
-            <a class="item item-text-wrap">
-                Soy maestra jardinera. Me encantan los bebes y tengo mucha paciencia.
-                <p class="category">Babysitter</p>
-            </a>
-        </div>
-        <div class="list card">
-            <div class="images-position">
-            <div class="item-avatar-right">
-                  <img src="img/mom2.png">
-            </div>
-            <div class="item item-image">
-                <img src="img/babysitter.jpg">
-            </div>
-        </div>
-            <div class="item-name-right">
-                
-                <h2>Flor Ramirez</h2>
-                <div class="ranking">
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star-half"></div>
-                    <div class="icon ion-ios-star-outline"></div>
-                </div>
-            </div>
-            <a class="item item-text-wrap">
-                Soy maestra jardinera. Me encantan los bebes y tengo mucha paciencia.
-                <p class="category">Babysitter</p>
-            </a>
-        </div>
-        <div class="list card">
-            <div class="images-position">
-            <div class="item-avatar-right">
-                  <img src="img/mom2.png">
-            </div>
-            <div class="item item-image">
-                <img src="img/babysitter.jpg">
-            </div>
-        </div>
-            <div class="item-name-right">
-                
-                <h2>Flor Ramirez</h2>
-                <div class="ranking">
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star-half"></div>
-                    <div class="icon ion-ios-star-outline"></div>
-                </div>
-            </div>
-            <a class="item item-text-wrap">
-                Soy maestra jardinera. Me encantan los bebes y tengo mucha paciencia.
-                <p class="category">Babysitter</p>
-            </a>
-        </div>
-        <div class="list card">
-            <div class="images-position">
-            <div class="item-avatar-right">
-                  <img src="img/mom2.png">
-            </div>
-            <div class="item item-image">
-                <img src="img/babysitter.jpg">
-            </div>
-        </div>
-            <div class="item-name-right">
-                
-                <h2>Flor Ramirez</h2>
-                <div class="ranking">
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star-half"></div>
-                    <div class="icon ion-ios-star-outline"></div>
-                </div>
-            </div>
-            <a class="item item-text-wrap">
-                Soy maestra jardinera. Me encantan los bebes y tengo mucha paciencia.
-                <p class="category">Babysitter</p>
-            </a>
-        </div>
+        
     </ion-content>
 </ion-view>

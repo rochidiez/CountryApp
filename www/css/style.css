@@ -53,7 +53,8 @@ p.center {
 
 
 /* Dash */
-
+.dash h1 {font-size: 21px; 
+    }
 .dash .ranking {
     display: flex;
     flex-direction: column;
@@ -115,3 +116,8 @@ p.center {
 .select-user .item {
     line-height: 40px;
 }
+
+/* Posting */
+.posting select {width: 100%;}
+.posting .item-stacked-label.select .input-label {display: block;}
+

@@ -5,23 +5,26 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', "firebase"])
+
 
 .run(function($ionicPlatform) {
-    $ionicPlatform.ready(function() {
-        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-        // for form inputs)
-        if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-            cordova.plugins.Keyboard.disableScroll(true);
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
 
-        }
-        if (window.StatusBar) {
-            // org.apache.cordova.statusbar required
-            StatusBar.styleDefault();
-        }
-    });
+    }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
 })
+
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -63,7 +66,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             }
         }
     })
-
+    .state('tab.account', {
+        url: '/account',
+        views: {
+            'tab-account': {
+                templateUrl: 'templates/tab-account.html',
+                controller: 'AccountCtrl'
+            }
+        }
+    })
+    .state('tab.settings', {
+      url: "/settings",
+      views: {
+        'tab-account': {
+          templateUrl: "templates/tab-settings.html"
+        }
+      }
+    })
 
     .state('tab.chats', {
       url: "/chats",
@@ -75,7 +94,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     })
     .state('chat-detail', {
             url: '/chat-detail',
-            templateUrl: 'templates/chat-detail.html'
+            templateUrl: 'templates/chat-detail.html',
+            controller: 'ChatdetailCtrl'
         })
 
     .state('tab.book', {
@@ -96,15 +116,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             }
         }
     })
-
-    .state('tab.account', {
-        url: '/account',
+    .state('tab.post', {
+        url: '/post',
         views: {
-            'tab-account': {
-                templateUrl: 'templates/tab-account.html',
-                controller: 'AccountCtrl'
+            'tab-post': {
+                templateUrl: 'templates/tab-post.html',
+                controller: 'postCtrl'
             }
+            
         }
+    })
+    .state('tab.dash-detail', {
+      url: "/dash/:postId",
+      views: {
+        'tab-dash': {
+          templateUrl: "templates/dash-detail.html",
+          controller: 'DashDetailCtrl'
+        }
+      }
     });
 
     // if none of the above states are matched, use this as the fallback
