@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', "firebase"])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase'])
 
 
 .run(function($ionicPlatform) {
@@ -65,6 +65,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', "
                 controller: 'DashCtrl'
             }
         }
+    })
+    .state('tab.dash-detail', {
+      url: "/dash/detail",
+      views: {
+        'tab-dash': {
+          templateUrl: "templates/dash-detail.html",
+          controller: 'DashCtrl'
+        }
+      }
     })
     .state('tab.account', {
         url: '/account',
@@ -125,15 +134,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', "
             }
             
         }
-    })
-    .state('tab.dash-detail', {
-      url: "/dash/:postId",
-      views: {
-        'tab-dash': {
-          templateUrl: "templates/dash-detail.html",
-          controller: 'DashDetailCtrl'
-        }
-      }
     });
 
     // if none of the above states are matched, use this as the fallback

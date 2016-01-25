@@ -1,9 +1,14 @@
-<ion-view view-title="{{post.name}}">
+<ion-view view-title="{{ProductoSeleccionado.title}}">
   <ion-content class="padding">
-    <img ng-src="{{post.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{post.lastText}}
-      {{post.description}}
-    </p>
+  {{ProductoSeleccionado.title}}
+  {{postings}}
+  {{post}}
+  {{scope.ProductoSeleccionado}}
+  {{postings.post}}
+
+
+  hola
+   <button ng-click="ver()">producto en consola</button>
+    
   </ion-content>
 </ion-view>

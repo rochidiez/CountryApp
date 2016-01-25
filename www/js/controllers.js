@@ -1,7 +1,7 @@
 angular.module('starter.controllers', [])
 
 
-.controller('DashCtrl', function($scope, $firebaseObject) {
+.controller('DashCtrl', function($scope, $firebaseObject, $state) {
 
     var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting");
     // download the data into a local object
@@ -10,44 +10,56 @@ angular.module('starter.controllers', [])
     // click on `index.html` above to see it used in the DOM!
     syncObject.$bindTo($scope, "postings");
 
+    $scope.showDetails = function(post) {
+        $scope.ProductoSeleccionado = post;
+        $state.go('tab.dash-detail');
+        console.log(post);
+    };
+    
+    $scope.ver = function(post){
+        
+        console.log(post);
+    };
 
 
 })
 
 .controller('postCtrl', function($scope, $firebaseArray) {
-    $scope.data = {};
+        $scope.data = {};
 
-    var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting");
-    // create a synchronized array
-    var messages = $firebaseArray(ref);
-    // add new items to the array
-    // the message is automatically added to our Firebase database!
-    $scope.addMessage = function() {
-        messages.$add({
-            title: $scope.data.Title || '',
-            description: $scope.data.description || '',
-            pricing: $scope.data.price || '',
-            category: $scope.data.category || '',
-            extra: $scope.data.extra || ''
-        });
-        $scope.data = {}
-    };
-
-    
-
-})
-.controller('DashDetailCtrl', function($scope, $stateParams, $firebaseObject, Posts) {
- $scope.post = Posts.get($stateParams.postId);
-
-  var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting");
-    var syncObject = $firebaseObject(ref);
-    syncObject.$bindTo($scope, "postings");
-
-    console.log($stateParams);
+        var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting");
+        // create a synchronized array
+        var messages = $firebaseArray(ref);
+        // add new items to the array
+        // the message is automatically added to our Firebase database!
+        $scope.addMessage = function() {
+            messages.$add({
+                title: $scope.data.Title || '',
+                description: $scope.data.description || '',
+                pricing: $scope.data.price || '',
+                category: $scope.data.category || '',
+                extra: $scope.data.extra || ''
+            });
+            $scope.data = {}
+        };
 
 
 
-})
+
+
+    })
+    // .controller('DashDetailCtrl', function($scope, $stateParams, $firebaseObject, Posts) {
+    //  $scope.post = Posts.get($stateParams.postId);
+
+//   var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting");
+//     var syncObject = $firebaseObject(ref);
+//     syncObject.$bindTo($scope, "postings");
+
+//     console.log($stateParams);
+
+
+
+// })
 
 .controller('ChatdetailCtrl', function($scope) {
         $scope.$on('$ionicView.beforeEnter', function(event, viewData) {

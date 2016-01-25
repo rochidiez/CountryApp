@@ -1,16 +1,9 @@
 <ion-view view-title="Comtry App">
     <ion-nav-buttons side="right">
         <button class="button button-icon icon ion-ios-settings" ng-click="showPopup()"></button>
-        <button class="button button-icon icon ion-ios-search" ng-click="showPopup()"></button>
+        <button class="button button-icon icon ion-ios-search" ng-click="vm.showFilterBar()"></button>
     </ion-nav-buttons>
-    <!-- 
     
-    <div ng-repeat="publi in publicaciones">
-        {{publi}}
-        {{publi.mensaje}}
-    </div>
-
-     -->
     <ion-content class="padding dash">
         <div class="list card" ng-repeat="post in postings">
             <div class="images-position">
@@ -31,11 +24,12 @@
                     <div class="icon ion-ios-star-outline"></div>
                 </div>
             </div>
-            <a class="item item-text-wrap" href="#/tab/dash/{{post.id}}">
+            <div class="item item-text-wrap">
                 <h1>{{post.title}}</h1>
                 {{post.description}}
                 <p class="category">{{post.category}}</p>
-            </a>
+            </div>
+            <button ng-click="showDetails(post)">Ver más</button>
         </div>
         
     </ion-content>
