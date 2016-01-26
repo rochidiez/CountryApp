@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
 
 .controller('DashCtrl', function($scope, $firebaseObject, $state) {
-
+    console.log('test')
     var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting");
     // download the data into a local object
     var syncObject = $firebaseObject(ref);
@@ -10,10 +10,12 @@ angular.module('starter.controllers', [])
     // click on `index.html` above to see it used in the DOM!
     syncObject.$bindTo($scope, "postings");
 
-    $scope.showDetails = function(post) {
-        $scope.ProductoSeleccionado = post;
-        $state.go('tab.dash-detail');
-        console.log(post);
+    $scope.showDetails = function(key) {
+        $state.go('tab.dash-detail',{ id:key });
+        // console.log(key)
+        // $scope.ProductoSeleccionado = post;
+        // $state.go('tab.dash-detail');
+        // console.log(post);
     };
     
     $scope.ver = function(post){
@@ -21,6 +23,16 @@ angular.module('starter.controllers', [])
         console.log(post);
     };
 
+
+})
+
+.controller('DashDetail', function($scope, $stateParams, $firebaseObject, $state) {
+    // controller neuvo, recibo el parametro de el state con stateParams
+        console.log($stateParams.id)
+
+    var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting/"+$stateParams.id);
+    var syncObject = $firebaseObject(ref);
+    syncObject.$bindTo($scope, "ProductoSeleccionado");
 
 })
 
