@@ -1,15 +1,33 @@
 <ion-view view-title="{{ProductoSeleccionado.title}}">
-  <ion-content class="padding">
-  {{ProductoSeleccionado}}
-  {{ProductoSeleccionado.title}}
-  {{postings}}
-  {{post}}
-  {{scope.ProductoSeleccionado}}
-  {{postings.post}}
+  <ion-content>
+  <div class="card">
+  	<div class="item item-image">
+                    <img src="img/babysitter.jpg">
+                </div>
+  <div class="item item-text-wrap">
 
+    <h1>{{ProductoSeleccionado.title}}</h1>
+    <p>{{ProductoSeleccionado.description}}</p>
+    <span>Categoría: {{ProductoSeleccionado.category}}</span>
+  </div>
+</div>
 
-  hola
-   <button ng-click="ver()">producto en consola</button>
+<div class="card">
+	<div class="item-name-right">
+                <h2>Mica Gonzalez</h2>
+                <div class="ranking">
+                    <div class="icon ion-ios-star"></div>
+                    <div class="icon ion-ios-star"></div>
+                    <div class="icon ion-ios-star"></div>
+                    <div class="icon ion-ios-star-half"></div>
+                    <div class="icon ion-ios-star-outline"></div>
+                </div>
+            </div>
+	</div>
+  
+ 
+
+   
     
   </ion-content>
 </ion-view>
