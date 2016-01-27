@@ -6,6 +6,7 @@
     
     <ion-content class="padding dash">
         <div class="list card" ng-repeat="(key,post) in postings">
+            {{key}}
             <div class="images-position">
                 <div class="item-avatar-right">
                     <img src="img/mica.jpg">
@@ -24,12 +25,12 @@
                     <div class="icon ion-ios-star-outline"></div>
                 </div>
             </div>
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap" ng-click="showDetails(key)">
                 <h1>{{post.title}}</h1>
                 {{post.description}}
                 <p class="category">{{post.category}}</p>
             </div>
-            <button ng-click="showDetails(key)">Ver más</button>
+            <!-- <button >Ver más</button> -->
         </div>
         
     </ion-content>

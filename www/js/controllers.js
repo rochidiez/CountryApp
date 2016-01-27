@@ -11,28 +11,24 @@ angular.module('starter.controllers', [])
     syncObject.$bindTo($scope, "postings");
 
     $scope.showDetails = function(key) {
-        $state.go('tab.dash-detail',{ id:key });
-        // console.log(key)
-        // $scope.ProductoSeleccionado = post;
-        // $state.go('tab.dash-detail');
-        // console.log(post);
+        $state.go('tab.dash-detail', {
+            id: key
+        });
+
     };
     
-    $scope.ver = function(post){
-        
-        console.log(post);
-    };
 
 
 })
 
 .controller('DashDetail', function($scope, $stateParams, $firebaseObject, $state) {
     // controller neuvo, recibo el parametro de el state con stateParams
-        console.log($stateParams.id)
+    console.log($stateParams.id)
 
-    var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting/"+$stateParams.id);
+    var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting/" + $stateParams.id);
     var syncObject = $firebaseObject(ref);
     syncObject.$bindTo($scope, "ProductoSeleccionado");
+
 
 })
 
@@ -46,11 +42,11 @@ angular.module('starter.controllers', [])
         // the message is automatically added to our Firebase database!
         $scope.addMessage = function() {
             messages.$add({
-                title: $scope.data.Title || '',
-                description: $scope.data.description || '',
-                pricing: $scope.data.price || '',
-                category: $scope.data.category || '',
-                extra: $scope.data.extra || ''
+                title: $scope.data.Title || 'Título de post',
+                description: $scope.data.description || 'Descripción de post',
+                pricing: $scope.data.price || 'Precio',
+                category: $scope.data.category || 'Categoría',
+                extra: $scope.data.extra || 'Extra'
             });
             $scope.data = {}
         };
