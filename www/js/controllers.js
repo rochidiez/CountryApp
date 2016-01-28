@@ -1,43 +1,40 @@
 angular.module('starter.controllers', [])
 
 
-.controller('DashCtrl', function($scope, $firebaseObject, $state) {
-    console.log('test')
-    var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting");
-    // download the data into a local object
-    var syncObject = $firebaseObject(ref);
-    // synchronize the object with a three-way data binding
-    // click on `index.html` above to see it used in the DOM!
-    syncObject.$bindTo($scope, "postings");
+.controller('DashCtrl', function($scope, $firebaseArray, $state) {
+        console.log('test')
+        var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting");
+        $scope.postings = $firebaseArray(ref);
 
-    $scope.showDetails = function(key) {
-        $state.go('tab.dash-detail', {
-            id: key
-        });
+        $scope.showDetails = function(key) {
+            $state.go('tab.dash-detail', {
+                id: key
+            });
 
-    };
-    
+        };
+    })
+    .filter('reverse', function() {
+        return function(items) {
+            return items.slice().reverse();
+        };
+    })
+    .controller('DashDetail', function($scope, $stateParams, $firebaseObject, $state) {
+        // controller neuvo, recibo el parametro de el state con stateParams
+        console.log($stateParams.id)
 
-
-})
-
-.controller('DashDetail', function($scope, $stateParams, $firebaseObject, $state) {
-    // controller neuvo, recibo el parametro de el state con stateParams
-    console.log($stateParams.id)
-
-    var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting/" + $stateParams.id);
-    var syncObject = $firebaseObject(ref);
-    syncObject.$bindTo($scope, "ProductoSeleccionado");
+        var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting/" + $stateParams.id);
+        var syncObject = $firebaseObject(ref);
+        syncObject.$bindTo($scope, "ProductoSeleccionado");
 
 
-})
+    })
 
-.controller('postCtrl', function($scope, $firebaseArray) {
+.controller('postCtrl', function($scope, $firebasearray) {
         $scope.data = {};
 
         var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting");
         // create a synchronized array
-        var messages = $firebaseArray(ref);
+        var messages = $firebasearray(ref);
         // add new items to the array
         // the message is automatically added to our Firebase database!
         $scope.addMessage = function() {
@@ -50,6 +47,33 @@ angular.module('starter.controllers', [])
             });
             $scope.data = {}
         };
+
+        // //Post photo:
+        // $ionicPlatform.ready(function() {
+        //     var options = {
+        //         quality: 50,
+        //         destinationType: Camera.DestinationType.DATA_URL,
+        //         sourceType: Camera.PictureSourceType.CAMERA,
+        //         allowEdit: true,
+        //         encodingType: Camera.EncodingType.JPEG,
+        //         targetWidth: 100,
+        //         targetHeight: 100,
+        //         popoverOptions: CameraPopoverOptions,
+        //         saveToPhotoAlbum: false,
+        //         correctOrientation: true
+        //     };
+
+        //     $cordovaCamera.getPicture(options).then(function(imageData) {
+        //         var image = document.getElementById('myImage');
+        //         image.src = "data:image/jpeg;base64," + imageData;
+        //     }, function(err) {
+        //         // error
+        //     });
+        // });
+
+
+
+
 
 
 

@@ -5,8 +5,7 @@
     </ion-nav-buttons>
     
     <ion-content class="padding dash">
-        <div class="list card" ng-repeat="(key,post) in postings">
-            {{key}}
+        <div class="list card" ng-repeat="(key,post) in postings  | reverse">
             <div class="images-position">
                 <div class="item-avatar-right">
                     <img src="img/mica.jpg">
