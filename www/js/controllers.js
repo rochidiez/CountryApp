@@ -29,12 +29,12 @@ angular.module('starter.controllers', [])
 
     })
 
-.controller('postCtrl', function($scope, $firebasearray) {
+.controller('postCtrl', function($scope, $firebaseArray) {
         $scope.data = {};
 
         var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting");
         // create a synchronized array
-        var messages = $firebasearray(ref);
+        var messages = $firebaseArray(ref);
         // add new items to the array
         // the message is automatically added to our Firebase database!
         $scope.addMessage = function() {
