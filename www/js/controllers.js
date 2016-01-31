@@ -29,7 +29,7 @@ angular.module('starter.controllers', [])
 
     })
 
-.controller('postCtrl', function($scope, $firebaseArray) {
+.controller('postCtrl', function($scope, $firebaseArray, $cordovaCamera) {
         $scope.data = {};
 
         var ref = new Firebase("https://amber-torch-26.firebaseio.com/posting");
@@ -48,8 +48,26 @@ angular.module('starter.controllers', [])
             $scope.data = {}
         };
 
-        // //Post photo:
-        // $ionicPlatform.ready(function() {
+        $scope.getPhoto = function() {
+            $cordovaCamera.getPicture().then(function(imageURI) {
+                console.log(imageURI);
+                $scope.lastPhoto = imageURI;
+            }, function(err) {
+                console.err(err);
+            }, {
+                quality: 75,
+                targetWidth: 320,
+                targetHeight: 320,
+                saveToPhotoAlbum: false
+            });
+        };
+
+
+
+        // IONIC PHOTO
+        // document.addEventListener("deviceready", function() {
+
+
         //     var options = {
         //         quality: 50,
         //         destinationType: Camera.DestinationType.DATA_URL,
@@ -64,17 +82,14 @@ angular.module('starter.controllers', [])
         //     };
 
         //     $cordovaCamera.getPicture(options).then(function(imageData) {
+
         //         var image = document.getElementById('myImage');
         //         image.src = "data:image/jpeg;base64," + imageData;
         //     }, function(err) {
         //         // error
         //     });
-        // });
 
-
-
-
-
+        // }, false);
 
 
 

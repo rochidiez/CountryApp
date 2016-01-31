@@ -2,34 +2,34 @@
     <ion-content class="posting">
     <form ng-submit="addMessage()">
         <div class="list card padding">
-        	<!-- <button class="button button-block button-dark button-outline" ng-click="showPopup()">
-                Subir una foto
-            </button> -->
+        	<button ng-click="getPhoto()" class="button button-block button-primary">Take Photo</button>
+            <img ng-src="{{lastPhoto}}" style="max-width: 100%">
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Título</span>
 
-                <input ng-model="data.Title" type="text" placeholder="Ej: Carpooling">
+                <input ng-model="data.Title" type="text" placeholder="Ej: Carpooling" />
             </label>
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Descripción</span>
-                <input ng-model="data.description" type="text" placeholder="Ej: Voy a buscar a los chicos a la salidad del colegio.">
+                <input ng-model="data.description" type="text" placeholder="Ej: Voy a buscar a los chicos a la salidad del colegio."/>
             </label>
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Precio</span>
-                <input ng-model="data.price" type="number" placeholder="Ej: $30 (Opcional)">
+                <input ng-model="data.price" type="number" placeholder="Ej: $30 (Opcional)"/>
             </label>
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Categoría</span>
-                <input ng-model="data.category" type="text" placeholder="Ej: Carpooling">
+                <input ng-model="data.category" type="text" placeholder="Ej: Carpooling"/>
             </label>
 
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Dato de color</span>
-                <input ng-model="data.extra" type="text" placeholder="Ej: Tengo una camioneta super cómoda :)">
+                <input ng-model="data.extra" type="text" placeholder="Ej: Tengo una camioneta super cómoda :)"/>
             </label>
 
 
         </div>
+        <!-- /.list card padding -->
         <div class="padding">
             <button type="submit" class="button button-block button-calm">
                 Publicar
