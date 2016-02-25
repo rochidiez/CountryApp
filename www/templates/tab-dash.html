@@ -11,7 +11,7 @@
                     <img src="img/mica.jpg">
                 </div>
                 <div class="item item-image">
-                    <img ng-src="data:image/jpg;base64,{{data.lastPhoto}}">
+                    <img ng-src="data:image/jpg;base64,{{post.image}}">
                 </div>
             </div>
             <div class="item-name-right">
@@ -24,7 +24,7 @@
                     <div class="icon ion-ios-star-outline"></div>
                 </div>
             </div>
-            <div class="item item-text-wrap" ng-click="showDetails(key)">
+            <div class="item item-text-wrap" ng-click="showDetails(post.$id)">
                 <h1>{{post.title}}</h1>
                 {{post.description}}
                 <p class="category">{{post.category}}</p>
