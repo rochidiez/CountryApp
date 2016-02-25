@@ -1,4 +1,4 @@
-<ion-view view-title="Comtry App">
+<ion-view view-title='<img class="logoheader" src="img/logo-life-in-white.png">'>
     <ion-nav-buttons side="right">
         <button class="button button-icon icon ion-ios-settings" ng-click="showPopup()"></button>
         <button class="button button-icon icon ion-ios-search" ng-click="vm.showFilterBar()"></button>
@@ -11,7 +11,7 @@
                     <img src="img/mica.jpg">
                 </div>
                 <div class="item item-image">
-                    <img src="img/babysitter.jpg">
+                    <img ng-src="data:image/jpg;base64,{{data.lastPhoto}}">
                 </div>
             </div>
             <div class="item-name-right">

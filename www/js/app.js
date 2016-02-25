@@ -6,26 +6,28 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase', 'ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase', 'ngCordovaMocks'])
 
-.config(function($compileProvider){
-  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+.config(function($compileProvider) {
+    $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel|data):/);
 })
 
 .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
+    
+    $ionicPlatform.ready(function() {
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+        if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+            cordova.plugins.Keyboard.disableScroll(true);
 
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
+        }
+        if (window.StatusBar) {
+            // org.apache.cordova.statusbar required
+            StatusBar.styleDefault();
+        }
+    });
+
 })
 
 
@@ -61,50 +63,50 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     // Each tab has its own nav history stack:
 
     .state('tab.dash', {
-        url: '/dash',
-        views: {
-            'tab-dash': {
-                templateUrl: 'templates/tab-dash.html',
-                controller: 'DashCtrl'
+            url: '/dash',
+            views: {
+                'tab-dash': {
+                    templateUrl: 'templates/tab-dash.html',
+                    controller: 'DashCtrl'
+                }
             }
-        }
-    })
-    .state('tab.dash-detail', {
-      url: "/dash/detail/:id",
-      views: {
-        'tab-dash': {
-          templateUrl: "templates/dash-detail.html",
-          controller: 'DashDetail'
-        }
-      }
-    })
-    .state('tab.account', {
-        url: '/account',
-        views: {
-            'tab-account': {
-                templateUrl: 'templates/tab-account.html',
-                controller: 'AccountCtrl'
+        })
+        .state('tab.dash-detail', {
+            url: "/dash/detail/:id",
+            views: {
+                'tab-dash': {
+                    templateUrl: "templates/dash-detail.html",
+                    controller: 'DashDetail'
+                }
             }
-        }
-    })
-    .state('tab.settings', {
-      url: "/settings",
-      views: {
-        'tab-account': {
-          templateUrl: "templates/tab-settings.html"
-        }
-      }
-    })
+        })
+        .state('tab.account', {
+            url: '/account',
+            views: {
+                'tab-account': {
+                    templateUrl: 'templates/tab-account.html',
+                    controller: 'AccountCtrl'
+                }
+            }
+        })
+        .state('tab.settings', {
+            url: "/settings",
+            views: {
+                'tab-account': {
+                    templateUrl: "templates/tab-settings.html"
+                }
+            }
+        })
 
     .state('tab.chats', {
-      url: "/chats",
-      views: {
-        'tab-account': {
-          templateUrl: "templates/tab-chats.html"
-        }
-      }
-    })
-    .state('chat-detail', {
+            url: "/chats",
+            views: {
+                'tab-account': {
+                    templateUrl: "templates/tab-chats.html"
+                }
+            }
+        })
+        .state('chat-detail', {
             url: '/chat-detail',
             templateUrl: 'templates/chat-detail.html',
             controller: 'ChatdetailCtrl'
@@ -121,25 +123,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
 
     .state('tab.notifications', {
-        url: '/notifications',
-        views: {
-            'tab-notifications': {
-                templateUrl: 'templates/tab-notifications.html'
+            url: '/notifications',
+            views: {
+                'tab-notifications': {
+                    templateUrl: 'templates/tab-notifications.html'
+                }
             }
-        }
-    })
-    .state('tab.post', {
-        url: '/post',
-        views: {
-            'tab-post': {
-                templateUrl: 'templates/tab-post.html',
-                controller: 'postCtrl'
-            }
-            
-        }
-    });
+        })
+        .state('tab.post', {
+            url: '/post',
+            views: {
+                'tab-post': {
+                    templateUrl: 'templates/tab-post.html',
+                    controller: 'postCtrl'
+                }
 
-    
+            }
+        });
+
+
     $urlRouterProvider.otherwise('/sign-in');
 
 

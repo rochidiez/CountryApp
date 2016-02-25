@@ -1,4 +1,11 @@
-/*a {color: #35333d !important;}
-a:active {color: #ffffff !important;}*/
+.bar.bar-calm.color {border-color: #19a5ab;
+    background-color: #19bfab;
+    background-image: linear-gradient(0deg, #19a5ab, #19a5ab 50%, transparent 50%);}
 
 .scroll-content {background-color: #f3f3f3;}
+
+.button.button-calm.color, .bar-calm .button.color {background-color: #19bfab;}
+.button.button-calm.button-outline.color {border-color: #19bfab;
+    color: #19bfab;}
+ .bar-color {background-color: #19bfab; }
+.button.button-positive {background-color: #19bfab !important;}

@@ -1,15 +1,19 @@
 <ion-view view-title="Luli Ramirez">
-  <ion-content class="padding">
-    <img ng-src="img/agus.png" style="width: 64px; height: 64px">
-    <p>
-      Hola! tengo una hija de 5 años. Es super tranquila pero no tengo con quien dejarla el 23 de febrero. Estás libre ese día?
-    </p>
-  </ion-content>
-  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+    <ion-content class="padding conversation">
+        <div class="item-avatar"><img ng-src="img/agus.png">
+            <div class="bubble">
+              <i class="ion-arrow-left-b"></i>
+                <p>
+                    Hola! tengo una hija de 5 años. Es super tranquila pero no tengo con quien dejarla el 23 de febrero. Estás libre ese día?
+                </p>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
         <label class="item-input-wrapper">
-            <input type="text" placeholder="Type your message"  />
+            <input type="text" placeholder="Type your message" />
         </label>
-        <button class="button button-clear" >
+        <button class="button button-clear">
             Enviar
         </button>
     </ion-footer-bar>

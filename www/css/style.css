@@ -3,7 +3,12 @@
 p.center {
     text-align: center;
 }
-
+img.logoheader {max-height: 80%;
+    margin-top:5%;
+    }
+.bar .title {overflow: visible !important;
+min-width: 100px;
+margin: 0 0;}
 
 /* Account */
 
@@ -120,4 +125,17 @@ p.center {
 /* Posting */
 .posting select {width: 100%;}
 .posting .item-stacked-label.select .input-label {display: block;}
+
+
+
+/* chat detail */
+.conversation .bubble {background: #ffffff;
+    padding: 2%;
+    border: 1px solid #f1f1f1;
+    border-radius: 6px;
+    position: relative;}
+.conversation .bubble i {color: #ffffff;
+    position: absolute;
+    left: -3%;
+    font-size: 30px;}
 
