@@ -12,8 +12,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel|data):/);
 })
 
+
+
 .run(function($ionicPlatform) {
-    
+
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -22,11 +24,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             cordova.plugins.Keyboard.disableScroll(true);
 
         }
+        // if (window.StatusBar) {
+        //     // org.apache.cordova.statusbar required
+        //     StatusBar.styleDefault();
+        // }
         if (window.StatusBar) {
-            // org.apache.cordova.statusbar required
-            StatusBar.styleDefault();
+            StatusBar.styleHex('#FF0000');
         }
     });
+
+    
 
 })
 
@@ -79,6 +86,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     controller: 'DashDetail'
                 }
             }
+        })
+
+    .state('dash-detail', {
+            url: '/dash-filter',
+            templateUrl: 'templates/dash-filter.html',
+            controller: 'dashFilterCtrl'
+        })
+        .state('dash-detail-chat', {
+            url: '/dash-detail-chat',
+            templateUrl: 'templates/dash-detail-chat.html',
+            controller: 'dashDetailChatCtrl'
         })
         .state('tab.account', {
             url: '/account',

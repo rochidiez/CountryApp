@@ -1,36 +1,36 @@
 <ion-view view-title='<img class="logoheader" src="img/logo-life-in-white.png">'>
     <ion-nav-buttons side="right">
-        <button class="button button-icon icon ion-ios-settings" ng-click="showPopup()"></button>
-        <button class="button button-icon icon ion-ios-search" ng-click="vm.showFilterBar()"></button>
+        <a href="#/dash-filter" class="button button-icon icon ion-funnel"></a>
     </ion-nav-buttons>
-    
     <ion-content class="padding dash">
-        <div class="list card" ng-repeat="(key,post) in postings  | reverse">
-            <div class="images-position">
-                <div class="item-avatar-right">
-                    <img src="img/mica.jpg">
-                </div>
-                <div class="item item-image">
-                    <img ng-src="data:image/jpg;base64,{{post.image}}">
+        <div class="list card" ng-repeat="(key,post) in postings  | reverse" ng-click="showDetails(post.$id)">
+            <div class="item item-image">
+                <img ng-src="data:image/jpg;base64,{{post.image}}">
+            </div>
+            <div class="item item-name-right item-avatar-right">
+                <img src="img/mica.jpg">
+                <div class="name">
+                    <h2>Mica Gonzalez</h2>
+                    <div class="ranking">
+                        <div class="icon ion-ios-star"></div>
+                        <div class="icon ion-ios-star"></div>
+                        <div class="icon ion-ios-star"></div>
+                        <div class="icon ion-ios-star-half"></div>
+                        <div class="icon ion-ios-star-outline"></div>
+                    </div>
                 </div>
             </div>
-            <div class="item-name-right">
-                <h2>Mica Gonzalez</h2>
-                <div class="ranking">
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star-half"></div>
-                    <div class="icon ion-ios-star-outline"></div>
-                </div>
-            </div>
-            <div class="item item-text-wrap" ng-click="showDetails(post.$id)">
-                <h1>{{post.title}}</h1>
-                {{post.description}}
+            <div class="item item-text-wrap">
+
+                <h1>{{post.title}}</h1> {{post.description}}
                 <p class="category">{{post.category}}</p>
+                 <button ng-click="postings.$remove(post)" class="remove button button-icon"><i class="button-icon icon ion-trash-a"></i> ELIMINAR POST</button>
             </div>
+
+           
+                
+           
             <!-- <button >Ver más</button> -->
         </div>
-        
     </ion-content>
 </ion-view>

@@ -1,7 +1,6 @@
 <ion-view view-title="Crear publicación">
     <ion-nav-buttons side="right">
         <button class="button button-icon icon ion-camera" ng-click="getPhoto()"></button>
-        
     </ion-nav-buttons>
     <ion-content class="posting">
         <div class="card list padding">
@@ -20,9 +19,18 @@
                     <span class="input-label">Precio</span>
                     <input ng-model="data.price" type="number" placeholder="Ej: $30 (Opcional)" />
                 </label>
-                <label class="item item-input">
+                <label class="item item-select">
                     <span class="input-label">Categoría</span>
-                    <input ng-model="data.category" type="text" placeholder="Ej: Carpooling" />
+                    <!-- <input ng-model="data.category" type="text" placeholder="Ej: Carpooling" /> -->
+                    <select ng-model="data.category">
+                        <option selected>Salud y Bienestar</option>
+                        <option>Car Pooling y Transporte</option>
+                        <option>Educación</option>
+                        <option>Baby sitter</option>
+                        <option>Mantenimiento</option>
+                        <option>Eventos</option>
+                        <option>Otros</option>
+                    </select>
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Dato de color</span>

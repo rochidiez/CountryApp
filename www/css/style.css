@@ -6,6 +6,11 @@ p.center {
 img.logoheader {max-height: 80%;
     margin-top:5%;
     }
+.card h1 {font-size: 16px;
+    text-transform: uppercase;}
+.item p.categoria {font-size: 12px;
+    text-align: right;
+    margin-top: 6%;}
 .bar .title {overflow: visible !important;
 min-width: 100px;
 margin: 0 0;}
@@ -58,6 +63,10 @@ margin: 0 0;}
 
 
 /* Dash */
+.dash .remove.button {font-size: 12px;}
+.dash .button-icon .icon:before, .dash .button-icon.icon:before {font-size: 20px;}
+
+.dash .card .item:last-child {border-top: 1px solid #ddd;}
 .dash h1 {font-size: 21px; 
     }
 .dash .ranking {
@@ -65,7 +74,7 @@ margin: 0 0;}
     flex-direction: column;
     flex-flow: row wrap;
     margin-right: 10px;
-    margin-right: 80px;
+    margin-right: 60px;
     justify-content: flex-end;
 }
 
@@ -74,25 +83,23 @@ margin: 0 0;}
 }
 
 .dash .item-avatar-right img:first-child {
-    max-width: 70px;
-    max-height: 70px;
+    max-width: 50px;
+    max-height: 50px;
     top: auto;
 }
 
 .dash .item-avatar-right {
-    position: absolute;
-    z-index: 100;
-    right: 0;
-    bottom: -24%;
+   
 }
 
 .dash .item-name-right {
     text-align: right;
     padding: 6px 16px;
+    border: 0;
 }
 
 .dash .item-name-right h2 {
-    margin: 0 80px 0 0;
+    margin: 0 60px 0 0;
     font-size: 16px;
     font-weight: normal;
 }

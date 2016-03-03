@@ -1,33 +1,34 @@
 <ion-view view-title="{{ProductoSeleccionado.title}}">
-  <ion-content>
-  <div class="card">
-  	<div class="item item-image">
-                    <img ng-src="data:image/jpg;base64,{{ProductoSeleccionado.image}}">
-                </div>
-  <div class="item item-text-wrap">
-
-    <h1>{{ProductoSeleccionado.title}}</h1>
-    <p>{{ProductoSeleccionado.description}}</p>
-    <span>Categoría: {{ProductoSeleccionado.category}}</span>
-  </div>
-</div>
-
-<div class="card">
-	<div class="item-name-right">
-                <h2>Mica Gonzalez</h2>
-                <div class="ranking">
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star"></div>
-                    <div class="icon ion-ios-star-half"></div>
-                    <div class="icon ion-ios-star-outline"></div>
-                </div>
+<ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="item-image">
+            <img ng-src="data:image/jpg;base64,{{ProductoSeleccionado.image}}">
+        </div>
+        <div class="card">
+            <div class="item item-text-wrap">
+                <h1>{{ProductoSeleccionado.title}}</h1>
+                <p>{{ProductoSeleccionado.description}}</p>
+                <p class="categoria">Categoría: {{ProductoSeleccionado.category}}</p>
             </div>
-	</div>
-  
- 
-
-   
-    
-  </ion-content>
+        </div>
+        <div class="card">
+            <div class="item item-avatar">
+                <img src="img/mica.jpg">
+                <h2>Mica Gonzalez</h2>
+                <p><span class="icon ion-ios-star"></span>
+                    <span class="icon ion-ios-star"></span>
+                    <span class="icon ion-ios-star"></span>
+                    <span class="icon ion-ios-star-half"></span>
+                    <span class="icon ion-ios-star-outline"></span>
+                </p>
+            </div>
+             <div class="item item-body">
+             <p>Bio de mica Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,</p>
+             <a href="#/dash-detail-chat"class="button button-block button-calm color">
+                Enviar mensaje
+            </a>
+             </div>
+        </div>
+    </ion-content>
 </ion-view>
